@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Synopsis</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h2>Synopsis</h2>
+
+<p>This document summarizes the economic and health impact of US weather events as captured in an NOAA database spanning 1950-2011.  Weather event tracking in this NOAA database significantly expanded in the mid-1990s and the analysis focuses on 15 years (1996-2010) with more complete data.  The raw dataset is known to be only a sample of the full NOAA Storm Data (e.g., it does not capture Louisiana fatalaties from Hurricane Katrina), and findings should be interpreted with that in mind.</p>
+
+<ul>
+<li><p>Economic impact (as reflected by property/crop damage) is primarily caused by hurricane winds, storm surges, and floods.  These three events collectively cause ~60% of property/crop damage.  </p></li>
+<li><p>Human health impact (as reflected by injuries/fatalities, with fatalities weighted more heavily) is heavily driven by extreme heat and tornadoes.  These two events combine to cause ~40% of injuries and fatalities.  </p></li>
+</ul>
+
+<p>While there is occasional overlap among top causes, it appears different types of weather events tend to create large economic impacts vs. large health impacts.  </p>
+
+<h2>Data Processing</h2>
+
+<p>###<em>Initial Data Acquisition and Loading</em><br/>
+Data for this project was obtained from <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2">Storm Data Download</a>.  The raw ZIP file is downloaded to the working directory, write-protected, and loaded using R.  The directions for this assignment asked that we start from the ZIP file after having downloaded it to our machine.</p>
+
+<pre><code class="r">## read.csv() directly reads .csv.bz2 files, managing decompression as part of the function
+myCSV &lt;- read.csv(&quot;repdata-data-StormData.csv.bz2&quot;, stringsAsFactors = FALSE, na.strings=c(&quot;NA&quot;,&quot;&quot;))
+str(myCSV)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    902297 obs. of  37 variables:
+##  $ STATE__   : num  1 1 1 1 1 1 1 1 1 1 ...
+##  $ BGN_DATE  : chr  &quot;4/18/1950 0:00:00&quot; &quot;4/18/1950 0:00:00&quot; &quot;2/20/1951 0:00:00&quot; &quot;6/8/1951 0:00:00&quot; ...
+##  $ BGN_TIME  : chr  &quot;0130&quot; &quot;0145&quot; &quot;1600&quot; &quot;0900&quot; ...
+##  $ TIME_ZONE : chr  &quot;CST&quot; &quot;CST&quot; &quot;CST&quot; &quot;CST&quot; ...
+##  $ COUNTY    : num  97 3 57 89 43 77 9 123 125 57 ...
+##  $ COUNTYNAME: chr  &quot;MOBILE&quot; &quot;BALDWIN&quot; &quot;FAYETTE&quot; &quot;MADISON&quot; ...
+##  $ STATE     : chr  &quot;AL&quot; &quot;AL&quot; &quot;AL&quot; &quot;AL&quot; ...
+##  $ EVTYPE    : chr  &quot;TORNADO&quot; &quot;TORNADO&quot; &quot;TORNADO&quot; &quot;TORNADO&quot; ...
+##  $ BGN_RANGE : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ BGN_AZI   : chr  NA NA NA NA ...
+##  $ BGN_LOCATI: chr  NA NA NA NA ...
+##  $ END_DATE  : chr  NA NA NA NA ...
+##  $ END_TIME  : chr  NA NA NA NA ...
+##  $ COUNTY_END: num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ COUNTYENDN: logi  NA NA NA NA NA NA ...
+##  $ END_RANGE : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ END_AZI   : chr  NA NA NA NA ...
+##  $ END_LOCATI: chr  NA NA NA NA ...
+##  $ LENGTH    : num  14 2 0.1 0 0 1.5 1.5 0 3.3 2.3 ...
+##  $ WIDTH     : num  100 150 123 100 150 177 33 33 100 100 ...
+##  $ F         : int  3 2 2 2 2 2 2 1 3 3 ...
+##  $ MAG       : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ FATALITIES: num  0 0 0 0 0 0 0 0 1 0 ...
+##  $ INJURIES  : num  15 0 2 2 2 6 1 0 14 0 ...
+##  $ PROPDMG   : num  25 2.5 25 2.5 2.5 2.5 2.5 2.5 25 25 ...
+##  $ PROPDMGEXP: chr  &quot;K&quot; &quot;K&quot; &quot;K&quot; &quot;K&quot; ...
+##  $ CROPDMG   : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ CROPDMGEXP: chr  NA NA NA NA ...
+##  $ WFO       : chr  NA NA NA NA ...
+##  $ STATEOFFIC: chr  NA NA NA NA ...
+##  $ ZONENAMES : chr  NA NA NA NA ...
+##  $ LATITUDE  : num  3040 3042 3340 3458 3412 ...
+##  $ LONGITUDE : num  8812 8755 8742 8626 8642 ...
+##  $ LATITUDE_E: num  3051 0 0 0 0 ...
+##  $ LONGITUDE_: num  8806 0 0 0 0 ...
+##  $ REMARKS   : chr  NA NA NA NA ...
+##  $ REFNUM    : num  1 2 3 4 5 6 7 8 9 10 ...
+</code></pre>
+
+<p>Inspection of the file shows 902,297 observations and 37 variables.  </p>
+
+<p>###<em>Filtering to maintain only relevant columns</em><br/>
+Some columns are not relevant for this analysis.  We are particularly interested in event date &ldquo;BGN_DATE&rdquo;; event type &ldquo;EVTYPE&rdquo;; health impacts &ldquo;FATALITIES&rdquo; and &ldquo;INJURIES&rdquo;; and economic impacts &ldquo;PROPDMG&rdquo; and &ldquo;CROPDMG&rdquo;.  Note that economic impacts are reported such that order of magnitude (thousands, millions, or billions) is contained in separate columns &ldquo;PROPDMGEXP&rdquo; and &ldquo;CROPDMGEXP&rdquo;.</p>
+
+<p>We also keep the STATE and REFNUM columns in case there are useful for QC or follow-on analysis.</p>
+
+<pre><code class="r">myVars &lt;- c(&quot;REFNUM&quot;,&quot;BGN_DATE&quot;,&quot;STATE&quot;,&quot;EVTYPE&quot;,&quot;FATALITIES&quot;,&quot;INJURIES&quot;,
+            &quot;PROPDMG&quot;,&quot;CROPDMG&quot;,&quot;PROPDMGEXP&quot;,&quot;CROPDMGEXP&quot;)
+myFiltered &lt;- myCSV[,myVars]
+</code></pre>
+
+<p>###<em>Calculating the event year/decade and checking the resulting data</em><br/>
+We also create a year and decade variable for future analysis and inspect the file contents.</p>
+
+<pre><code class="r">myFiltered$year &lt;- as.numeric(format(as.Date(myFiltered$BGN_DATE,format=&quot;%m/%d/%Y&quot;),&quot;%Y&quot;))
+myFiltered$decade &lt;- 10 * (myFiltered$year %/% 10)
+str(myFiltered)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    902297 obs. of  12 variables:
+##  $ REFNUM    : num  1 2 3 4 5 6 7 8 9 10 ...
+##  $ BGN_DATE  : chr  &quot;4/18/1950 0:00:00&quot; &quot;4/18/1950 0:00:00&quot; &quot;2/20/1951 0:00:00&quot; &quot;6/8/1951 0:00:00&quot; ...
+##  $ STATE     : chr  &quot;AL&quot; &quot;AL&quot; &quot;AL&quot; &quot;AL&quot; ...
+##  $ EVTYPE    : chr  &quot;TORNADO&quot; &quot;TORNADO&quot; &quot;TORNADO&quot; &quot;TORNADO&quot; ...
+##  $ FATALITIES: num  0 0 0 0 0 0 0 0 1 0 ...
+##  $ INJURIES  : num  15 0 2 2 2 6 1 0 14 0 ...
+##  $ PROPDMG   : num  25 2.5 25 2.5 2.5 2.5 2.5 2.5 25 25 ...
+##  $ CROPDMG   : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ PROPDMGEXP: chr  &quot;K&quot; &quot;K&quot; &quot;K&quot; &quot;K&quot; ...
+##  $ CROPDMGEXP: chr  NA NA NA NA ...
+##  $ year      : num  1950 1950 1951 1951 1951 ...
+##  $ decade    : num  1950 1950 1950 1950 1950 1950 1950 1950 1950 1950 ...
+</code></pre>
+
+<pre><code class="r">summary(myFiltered[,c(5,6,7,8,11,12)])
+</code></pre>
+
+<pre><code>##    FATALITIES          INJURIES            PROPDMG       
+##  Min.   :  0.0000   Min.   :   0.0000   Min.   :   0.00  
+##  1st Qu.:  0.0000   1st Qu.:   0.0000   1st Qu.:   0.00  
+##  Median :  0.0000   Median :   0.0000   Median :   0.00  
+##  Mean   :  0.0168   Mean   :   0.1557   Mean   :  12.06  
+##  3rd Qu.:  0.0000   3rd Qu.:   0.0000   3rd Qu.:   0.50  
+##  Max.   :583.0000   Max.   :1700.0000   Max.   :5000.00  
+##     CROPDMG             year          decade    
+##  Min.   :  0.000   Min.   :1950   Min.   :1950  
+##  1st Qu.:  0.000   1st Qu.:1995   1st Qu.:1990  
+##  Median :  0.000   Median :2002   Median :2000  
+##  Mean   :  1.527   Mean   :1999   Mean   :1994  
+##  3rd Qu.:  0.000   3rd Qu.:2007   3rd Qu.:2000  
+##  Max.   :990.000   Max.   :2011   Max.   :2010
+</code></pre>
+
+<p>The summary statistics suggest a succesful conversion to numeric year/decade, with 50% of the records being from 1995-2007.  There are no NA records in the numeric fields that we plan to use.  We maintained all of the 902,297 observations along with the 10 key variables and 2 new derived variables (year and decade).</p>
+
+<p>###<em>Calculating property/crop damage per event</em>  </p>
+
+<h5><strong><em>Identify and plan around anomalous magnitudes for crop and property damage</em></strong></h5>
+
+<p>A contingency table is created to understand the entries in PROPDMGEXP and CROPDMGEXP:  </p>
+
+<pre><code class="r">table(myCSV$PROPDMGEXP,myCSV$CROPDMGEXP,useNA=&quot;always&quot;)
+</code></pre>
+
+<pre><code>##       
+##             ?      0      2      B      k      K      m      M   &lt;NA&gt;
+##   -         0      0      0      0      0      0      0      0      1
+##   ?         0      0      0      0      0      0      0      0      8
+##   +         0      0      0      0      0      0      0      0      5
+##   0         0      0      0      0      0      4      0      1    211
+##   1         0      0      0      0      0      0      0      0     25
+##   2         0      0      0      0      0      0      0      0     13
+##   3         0      0      0      0      0      1      0      0      3
+##   4         0      0      0      0      0      0      0      0      4
+##   5         0      0      0      0      0      1      0      1     26
+##   6         0      0      0      0      0      0      0      0      4
+##   7         0      0      0      0      0      0      0      0      5
+##   8         0      0      0      0      0      0      0      0      1
+##   B         0      0      0      2      0     11      0     11     16
+##   h         0      0      0      0      0      0      0      0      1
+##   H         0      0      0      0      0      0      0      0      6
+##   K         4     16      0      3     21 274690      0    864 149067
+##   m         0      0      0      0      0      0      1      0      6
+##   M         1      0      0      0      0   3260      0    674   7395
+##   &lt;NA&gt;      2      3      1      4      0   3865      0    443 461616
+</code></pre>
+
+<p>Inspection of the PROPDMGEXP and CROPDMGEXP table, along with exploration of the associated records, suggests K/k is for thousands, M/m is for millions, and B is for billions (e.g., very large hurricanes and floods).</p>
+
+<p>There are 321 records with PROPDMGEXP symbols that cannot be interpreted and 27 records with CROPDMGEXP symbols that cannot be interpreted.  Manual inspection of a sample of these records shows them to be unremarkable and they are all treated as having $0 of damage.  These anomalies occured primarily in 1995.</p>
+
+<p>Further, there are 76 records where PROPDMGEXP is NA while PROPDMG &gt; 0; and 3 records where CROPDMGEXP is NA while CROPDMG &gt; 0.  Maunal inspection of a sample of these records shows them to be unremarkable, and they are all treated as having $0 of damage.  These anomalies all occur in 1993-1995.  </p>
+
+<h5><strong><em>Convert property and crop damage to dollars based on k/K or m/M or B</em></strong></h5>
+
+<p>We convert all damage to millions of dollars for ease of future reporting.  If the PROPDMGEXP or CROPDMGEXP variable is not interpretable, it will stick with the default zero multiplier (treat as $0).  </p>
+
+<pre><code class="r">myFiltered$multProp &lt;- 0
+myFiltered$multProp[which(myFiltered$PROPDMGEXP %in% c(&quot;k&quot;,&quot;K&quot;))] &lt;- .001  ## thousands to millions
+myFiltered$multProp[which(myFiltered$PROPDMGEXP %in% c(&quot;m&quot;,&quot;M&quot;))] &lt;- 1 ## leave millions as is
+myFiltered$multProp[which(myFiltered$PROPDMGEXP %in% c(&quot;b&quot;,&quot;B&quot;))] &lt;- 1000 ## billions to millions
+
+myFiltered$multCrop &lt;- 0
+myFiltered$multCrop[which(myFiltered$CROPDMGEXP %in% c(&quot;k&quot;,&quot;K&quot;))] &lt;- .001  ## thousands to millions
+myFiltered$multCrop[which(myFiltered$CROPDMGEXP %in% c(&quot;m&quot;,&quot;M&quot;))] &lt;- 1 ## leave millions as is
+myFiltered$multCrop[which(myFiltered$CROPDMGEXP %in% c(&quot;b&quot;,&quot;B&quot;))] &lt;- 1000 ## billions to millions
+
+myFiltered$dollarProp &lt;- myFiltered$PROPDMG * myFiltered$multProp ## field now in millions
+myFiltered$dollarCrop &lt;- myFiltered$CROPDMG * myFiltered$multCrop ## field now in millions
+
+dim(myFiltered)
+</code></pre>
+
+<pre><code>## [1] 902297     16
+</code></pre>
+
+<pre><code class="r">colnames(myFiltered)
+</code></pre>
+
+<pre><code>##  [1] &quot;REFNUM&quot;     &quot;BGN_DATE&quot;   &quot;STATE&quot;      &quot;EVTYPE&quot;     &quot;FATALITIES&quot;
+##  [6] &quot;INJURIES&quot;   &quot;PROPDMG&quot;    &quot;CROPDMG&quot;    &quot;PROPDMGEXP&quot; &quot;CROPDMGEXP&quot;
+## [11] &quot;year&quot;       &quot;decade&quot;     &quot;multProp&quot;   &quot;multCrop&quot;   &quot;dollarProp&quot;
+## [16] &quot;dollarCrop&quot;
+</code></pre>
+
+<pre><code class="r">set.seed(216160957)
+myFiltered[sample(nrow(myFiltered),15,replace=FALSE),][c(1,8,10,13,15),]  ## Rows of more interest
+</code></pre>
+
+<pre><code>##        REFNUM          BGN_DATE STATE      EVTYPE FATALITIES INJURIES
+## 833635 833565 9/17/2010 0:00:00    NE        HAIL          0        0
+## 802694 802624 5/23/2010 0:00:00    NV  DUST DEVIL          0        0
+## 849334 849334 4/23/2011 0:00:00    MO        HAIL          0        0
+## 893588 893539 8/28/2011 0:00:00    VT       FLOOD          0        0
+## 530112 531181 5/23/2004 0:00:00    IL FLASH FLOOD          0        0
+##        PROPDMG CROPDMG PROPDMGEXP CROPDMGEXP year decade multProp multCrop
+## 833635       0       0          K          K 2010   2010    0.001    0.001
+## 802694      50       0          K          K 2010   2010    0.001    0.001
+## 849334      50       0          K          K 2011   2010    0.001    0.001
+## 893588     500     500          M          K 2011   2010    1.000    0.001
+## 530112       0       0       &lt;NA&gt;       &lt;NA&gt; 2004   2000    0.000    0.000
+##        dollarProp dollarCrop
+## 833635      0e+00        0.0
+## 802694      5e-02        0.0
+## 849334      5e-02        0.0
+## 893588      5e+02        0.5
+## 530112      0e+00        0.0
+</code></pre>
+
+<pre><code class="r">myFiltered[myFiltered$multProp==1000,][sample(40,6,replace=FALSE),]
+</code></pre>
+
+<pre><code>##        REFNUM          BGN_DATE STATE            EVTYPE FATALITIES
+## 298088 298057 4/18/1997 0:00:00    ND             FLOOD          0
+## 834674 834634 10/5/2010 0:00:00    AZ              HAIL          0
+## 529498 529446 9/13/2004 0:00:00    FL HURRICANE/TYPHOON          7
+## 860386 860355 4/27/2011 0:00:00    AL           TORNADO         44
+## 529363 529311 8/13/2004 0:00:00    FL         HIGH WIND          4
+## 366694 366653 9/15/1999 0:00:00    NC         HURRICANE          0
+##        INJURIES PROPDMG CROPDMG PROPDMGEXP CROPDMGEXP year decade multProp
+## 298088        0     3.0       0          B       &lt;NA&gt; 1997   1990     1000
+## 834674        1     1.8       0          B          K 2010   2010     1000
+## 529498        0     4.0      25          B          M 2004   2000     1000
+## 860386      800     1.5       0          B          K 2011   2010     1000
+## 529363        0     1.3       0          B       &lt;NA&gt; 2004   2000     1000
+## 366694        0     3.0     500          B          M 1999   1990     1000
+##        multCrop dollarProp dollarCrop
+## 298088    0.000       3000          0
+## 834674    0.001       1800          0
+## 529498    1.000       4000         25
+## 860386    0.001       1500          0
+## 529363    0.000       1300          0
+## 366694    1.000       3000        500
+</code></pre>
+
+<p>As expected, myFiltered still contains 902,297 observations.  There are 16 variables (original 10 key variables plus year/decade plus four new variables for use in the dollar value of damage as just described).  </p>
+
+<p>The 2011 flood in Vermont correctly converts 500M to 500, while records with k/K correctly divide by 1000.  A sampling of records with billions of reported property damage reveals catastrophic event types commonly associated with reports of widespread property destruction.  Conversion to millions of dollars appears as intended in these samples.</p>
+
+<p>Lastly, we examine the database totals for the key numeric variables (recall that conversions for dollarCrop and dollarProp made each of these represent millions of dollars).  </p>
+
+<pre><code class="r">colSums(myFiltered[,c(5:8,15:16)])
+</code></pre>
+
+<pre><code>##  FATALITIES    INJURIES     PROPDMG     CROPDMG  dollarProp  dollarCrop 
+##    15145.00   140528.00 10884500.01  1377827.32   427318.64    49104.19
+</code></pre>
+
+<p>Of note, the estimated $427 billion of property damage and $49 billion of crop damage over ~60 years is far more plausible than the unconverted $11 million of property damage and $1.4 million of crop damage.</p>
+
+<p>###<em>Aggregating event types for further analysis</em>  </p>
+
+<h5><strong><em>Declare an event type by finding key words in EVTYPE</em></strong></h5>
+
+<p>The EVTYPE variable is a bit messy, and we clean it with key word searches.  Exploratory analysis was run to understand key words associated with EVTYPES causing the strong majority of economic and health impacts.  The main implications of the approach arising from that exploratory analysis are included below as Addendum #1.  </p>
+
+<p>A strategy to convert EVTYPE to eventType was developed, with the default being to declare eventType as &ldquo;All Other&rdquo; unless a specific keyword can be found.  The priority of the assignments is the reverse order of the variables declared in myShortEvent.  That is to say that if EVTYPE were &ldquo;Thunderstorm with high wind due to tornado&rdquo;, then it would map to TORNADO and not to WIND or THUNDERSTORM.  The general intent was to prioritize more descriptive/severe event names over more general event names.</p>
+
+<pre><code class="r">myShortEvent &lt;- c(&quot;WINTER&quot;,&quot;WIND&quot;,&quot;FREEZE&quot;,&quot;COLD&quot;,&quot;HEAT&quot;,&quot;RAIN&quot;,&quot;SNOW&quot;,&quot;ICE&quot;,&quot;HAIL&quot;,&quot;FLD&quot;,&quot;FLOOD&quot;,
+                  &quot;TSUNAMI&quot;,&quot;SURGE&quot;,&quot;DROUGHT&quot;,&quot;FOG&quot;,&quot;DUST&quot;,&quot;TSTM&quot;,&quot;THUNDERSTORM&quot;,&quot;LIGHTNING&quot;,&quot;FIRE&quot;,
+                  &quot;BLIZZARD&quot;,&quot;AVALANCHE&quot;,&quot;FLASH&quot;,&quot;SURF&quot;,&quot;RIP&quot;,&quot;TYPHOON&quot;,&quot;HURRICANE&quot;,&quot;TROPICAL&quot;,&quot;TORNADO&quot;
+                  )
+
+myFiltered$eventType &lt;- &quot;All Other&quot;
+
+## This loop keeps overwriting eventType, so the last item from myShortEvent
+## found within EVTYPE for a given record prevails; not a case sensitive search
+for (myMatch in myShortEvent) {
+    myFiltered$eventType[grep(myMatch,myFiltered$EVTYPE,ignore.case=TRUE)] &lt;- myMatch
+}
+</code></pre>
+
+<p>Further, a few event types were consolidated as they appear highly related to one another.</p>
+
+<pre><code class="r">myFiltered$eventType[myFiltered$eventType %in% c(&quot;HURRICANE&quot;,&quot;TYPHOON&quot;)] &lt;- &quot;TROPICAL&quot;
+myFiltered$eventType[myFiltered$eventType==&quot;SURF&quot;] &lt;- &quot;RIP&quot;
+myFiltered$eventType[myFiltered$eventType==&quot;TSTM&quot;] &lt;- &quot;THUNDERSTORM&quot;
+myFiltered$eventType[myFiltered$eventType %in% c(&quot;FLD&quot;)] &lt;- &quot;FLOOD&quot;
+myFiltered$eventType[myFiltered$eventType %in% c(&quot;TSUNAMI&quot;)] &lt;- &quot;FLASH&quot;
+myFiltered$eventType[myFiltered$eventType==&quot;FREEZE&quot;] &lt;- &quot;COLD&quot;
+myFiltered$eventType[myFiltered$EVTYPE %in% c(&quot;NON TSTM WIND&quot;,&quot;NON-TSTM WIND&quot;)] &lt;- &quot;WIND&quot;
+</code></pre>
+
+<h5><strong><em>Declare an event class by further grouping eventType</em></strong></h5>
+
+<p>The event types were further aggregated to simplify some downstream reporting.</p>
+
+<pre><code class="r">myFiltered$masterType &lt;- &quot;Other&quot;
+
+myFiltered[myFiltered$eventType %in% c(&quot;HAIL&quot;,&quot;ICE&quot;,&quot;LIGHTNING&quot;,&quot;RAIN&quot;,&quot;SNOW&quot;,
+                                       &quot;THUNDERSTORM&quot;,&quot;TORNADO&quot;,&quot;TROPICAL&quot;,&quot;WINTER&quot;),]$masterType &lt;- &quot;Storm&quot;
+
+myFiltered[myFiltered$eventType %in% c(&quot;COLD&quot;,&quot;DROUGHT&quot;,&quot;HEAT&quot;),]$masterType &lt;- &quot;Temp/Dew Point&quot;
+myFiltered[myFiltered$eventType %in% c(&quot;BLIZZARD&quot;,&quot;WIND&quot;,&quot;DUST&quot;),]$masterType &lt;- &quot;Wind&quot;
+myFiltered[myFiltered$eventType %in% c(&quot;FLASH&quot;,&quot;FLOOD&quot;,&quot;RIP&quot;,&quot;SURGE&quot;),]$masterType &lt;- &quot;Water&quot;
+myFiltered[myFiltered$eventType %in% c(&quot;AVALANCHE&quot;,&quot;FIRE&quot;,&quot;FOG&quot;),]$masterType &lt;- &quot;Assorted&quot;
+</code></pre>
+
+<h3>Calculating a single number for economic impact, health impact, and total impact</h3>
+
+<p>The focus of this analysis is to understand the impact of weather events on the economy and human health.  Additional variables are created to assess these overall impacts:  </p>
+
+<ul>
+<li>econImpact is the straight sum of crop damage and property damage, in millions of dollars</li>
+<li>healthImpact is an indexed aggregate of fatalities and injuries; the value of a human life lost is indexed as $5 million while the value of a human injury is indexed as $100,000; the sum of these indices is defined as healthImpact, in millions of dollars</li>
+<li>totalImpact is the straight sum of econImpact and healthImpact, in millions of dollars</li>
+</ul>
+
+<pre><code class="r">myFiltered$econImpact &lt;- myFiltered$dollarProp + myFiltered$dollarCrop ## in millions
+myFiltered$healthImpact &lt;- 0.1 * myFiltered$INJURIES + 5 * myFiltered$FATALITIES ## indexed to millions
+myFiltered$totalImpact &lt;- myFiltered$econImpact + myFiltered$healthImpact ## indexed in millions
+
+dim(myFiltered)
+</code></pre>
+
+<pre><code>## [1] 902297     21
+</code></pre>
+
+<pre><code class="r">colSums(myFiltered[,c(5:6,15:16,19:21)])
+</code></pre>
+
+<pre><code>##   FATALITIES     INJURIES   dollarProp   dollarCrop   econImpact 
+##     15145.00    140528.00    427318.64     49104.19    476422.83 
+## healthImpact  totalImpact 
+##     89777.80    566200.63
+</code></pre>
+
+<pre><code class="r">print(paste0(&quot;Property damage represents &quot;,round(100*sum(myFiltered[,15])/sum(myFiltered[,19]),0),
+             &quot;% of the $&quot;,round(sum(myFiltered[,19])/1000,0),&quot; billion of indexed economic impact&quot;
+             )
+      )
+</code></pre>
+
+<pre><code>## [1] &quot;Property damage represents 90% of the $476 billion of indexed economic impact&quot;
+</code></pre>
+
+<pre><code class="r">print(paste0(&quot;Fatalities represent &quot;,round(100*5*sum(myFiltered[,5])/sum(myFiltered[,20]),0),
+             &quot;% of the $&quot;,round(sum(myFiltered[,20])/1000,0),&quot; billion of indexed health impact&quot;
+             )
+      )
+</code></pre>
+
+<pre><code>## [1] &quot;Fatalities represent 84% of the $90 billion of indexed health impact&quot;
+</code></pre>
+
+<pre><code class="r">print(paste0(&quot;Economic impact represents &quot;,round(100*sum(myFiltered[,19])/sum(myFiltered[,21]),0),
+             &quot;% of the $&quot;,round(sum(myFiltered[,21])/1000,0),&quot; billion of indexed total impact&quot;
+             )
+      )
+</code></pre>
+
+<pre><code>## [1] &quot;Economic impact represents 84% of the $566 billion of indexed total impact&quot;
+</code></pre>
+
+<p>myFiltered continues to have all 902,297 observations.  In addition to the 16 variables previously carried, we have added descriptors for each event (eventType, masterType) along with indexed millions of dollars of impact (econImpact, healthImpact, totalImpact).  There are now 21 variables.  </p>
+
+<p>While there are many more injuries than fatalities, the assumption that loss of human life is of much greater impact than injury drives fatalities to represent 84% of indexed health impact.  Property damage is of order of magnitude greater than crop damage, representing 90% of indexed economic impact.  Economic impact is generally much greater than human impact, with the relative impacts being sensitive to indexing assumptions for fatality at $5 million and injury at $100,000.  </p>
+
+<p>Please see Addendum #2 below if interested in the event types having the greatest impact on any metric (cropDamage, propDamage, INJURIES, FATALITIES) on a standalone basis.  </p>
+
+<h2>Results</h2>
+
+<h3><em>Can we use all years of NOAA data for our analysis?</em></h3>
+
+<h5><strong><em>What is the pattern by year and impact type?</em></strong></h5>
+
+<p>We aggregate the data by year and masterType and brew a qualitative color palette to help with interpretation (note that the RColorBrewer library is required).  A stacked bar chart for indexed impact per year by class of event is created:  </p>
+
+<pre><code class="r">## Approach for creating stacked bar charts adapted from
+## http://www.r-bloggers.com/stacked-bar-charts-in-r/
+
+yearTotals &lt;- aggregate(cbind(econImpact,healthImpact,totalImpact) ~ year + masterType,
+                        data=myFiltered,FUN=sum
+)
+
+yearGraph &lt;- reshape(yearTotals[,c(1,2,5)],v.names=&quot;totalImpact&quot;,timevar=&quot;masterType&quot;,
+                     idvar=&quot;year&quot;,direction=&quot;wide&quot;)
+
+yearGraph &lt;- yearGraph[order(yearGraph$year),]
+str(yearGraph)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    62 obs. of  7 variables:
+##  $ year                      : num  1950 1951 1952 1953 1954 ...
+##  $ totalImpact.Assorted      : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ totalImpact.Other         : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ totalImpact.Storm         : num  450 288 1436 3704 337 ...
+##  $ totalImpact.Temp/Dew Point: num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ totalImpact.Water         : num  NA NA NA NA NA NA NA NA NA NA ...
+##  $ totalImpact.Wind          : num  NA NA NA NA NA NA NA NA NA NA ...
+##  - attr(*, &quot;reshapeWide&quot;)=List of 5
+##   ..$ v.names: chr &quot;totalImpact&quot;
+##   ..$ timevar: chr &quot;masterType&quot;
+##   ..$ idvar  : chr &quot;year&quot;
+##   ..$ times  : chr  &quot;Assorted&quot; &quot;Other&quot; &quot;Storm&quot; &quot;Temp/Dew Point&quot; ...
+##   ..$ varying: chr [1, 1:6] &quot;totalImpact.Assorted&quot; &quot;totalImpact.Other&quot; &quot;totalImpact.Storm&quot; &quot;totalImpact.Temp/Dew Point&quot; ...
+</code></pre>
+
+<pre><code class="r">library(RColorBrewer)
+myCol &lt;- brewer.pal(6,&quot;Accent&quot;)
+
+par(las=2)
+par(mar=c(4,4,2,1))
+
+barplot(t(yearGraph[,c(4,6,5,7,2,3)])/1000,names.arg=yearGraph$year,col=myCol[6:1],cex.names=0.7)
+legend(&quot;topleft&quot;,legend=c(&quot;Other&quot;,&quot;Misc&quot;,&quot;Wind&quot;,&quot;Temp/Humid&quot;,&quot;Water&quot;,&quot;Storm&quot;),fill=myCol)
+title(main=&quot;Index of Total Impact by Weather Type by Year&quot;,
+      ylab=&quot;Indexed Impact ($ billions)&quot;,xlab=&quot;Year&quot;
+      )
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-11"/></p>
+
+<p><strong><em>Figure 1: US Weather Event Type Tracking Increased in 1993</em></strong>  </p>
+
+<p>The stacked bars reveal a significant transition in 1993 when additional event types began to be tracked.  There is also spikiness to the total impact by year, with pronounced peaks in:  </p>
+
+<ul>
+<li>2005 - mix of storm and water, revealed by further exploration to be driven by massive destruction attributed to Hurricane Katrina&#39;s August 2005 landfall on the LA and MS coastlines (with associated storm surge)</li>
+<li>2006 - revealed by further exploration to be almost entirely driven by a single flooding event in CA in January 2006</li>
+</ul>
+
+<p>The Katrina impact in this data is in the ballpark of the ~$100 billion of damage commonly associated to the storm.  Many of the ~2,000 deaths commonly attributed to Katrina are not in the database, particularly those in the state of Louisiana (LA).  In response to a query, we learned that data provided for this analysis is deliberately a subset of the full NOAA Storm Data, and that lack of Katrina deaths in LA is expected. </p>
+
+<p>The 2006 spike is obvious data error introduced by REFNUM 605943.  There was a flood in California, but with impact of ~$100 million.  Due to data entry error, this was coded as a $115 billion event.  Other than  this record, the balance of 2006 has ~$13 billion of total impact, in line with nearby years.</p>
+
+<h5><strong><em>What do we do about it?</em></strong></h5>
+
+<p>The remainder of this analysis will focus only on the years 1996-2010.  Data before 1993 is incomplete as per the above chart.  This document previously noted anomalies for PROPDMGEXP and CROPDMGEXP in 1993-1995.  These three years not being vital to answering key questions, we exclude the years as possible teething issues associated with a methodology change.  Further, this database is of vintage November 2011, with attendant uncertainty as to the completeness and validation of records reported for 2011.</p>
+
+<p>In addition, REFNUM 605943 is deleted as it is clear data entry error with very large analysis impact.</p>
+
+<pre><code class="r">yearAnalyze &lt;- subset(myFiltered,c(year &gt;= 1996 &amp; year &lt;= 2010 &amp; REFNUM != 605943) )
+dim(yearAnalyze)
+</code></pre>
+
+<pre><code>## [1] 591355     21
+</code></pre>
+
+<pre><code class="r">print(aggregate(cbind(totalImpact=round(totalImpact,0),
+                      econImpact=round(econImpact,0),
+                      healthImpact=round(healthImpact,0)
+                      ) 
+                ~ year, data=yearAnalyze, FUN=sum
+                )
+      )
+</code></pre>
+
+<pre><code>##    year totalImpact econImpact healthImpact
+## 1  1996       10604       7657         2909
+## 2  1997       13834      10502         3294
+## 3  1998       20186      15690         4440
+## 4  1999       16978      11975         4963
+## 5  2000       11225       8607         2584
+## 6  2001       14095      11523         2526
+## 7  2002        8001       5233         2735
+## 8  2003       13510      11037         2435
+## 9  2004       28516      26453         2035
+## 10 2005      102998     100508         2473
+## 11 2006       13403      10101         3273
+## 12 2007        9409       7113         2273
+## 13 2008       19926      17260         2637
+## 14 2009        7078       5311         1740
+## 15 2010       12831      10557         2256
+</code></pre>
+
+<p>There are 591,335 observations remaining for analysis, including the 21 variables described previously.</p>
+
+<p>Each REFNUM for the top-24 events by total-impact was examined in the raw myCSV file.  There is no other obvious outlier error and many of the data match to large tropical storms and/or major floods (both known to cause extensive property damage).  I am somewhat skeptical about reported impact in the billions of dollars for AZ hail event 834634, NM fire event 398999, CA fire event 488004, and TN flooding event 808257.  I lack domain expertise to delete these and therefore retained them for this analysis.</p>
+
+<p>Please use caution in interpreting the remainder of this report.  The dataset provided is known to be merely a sample of the NOAA Storm Data and may also need further scrubbing for some of the largest impacts.  </p>
+
+<pre><code class="r">## For reference, these are the REFNUM for the top-24 impact-causing events
+yearAnalyze[order(-yearAnalyze$totalImpact),]$REFNUM[1:24]
+</code></pre>
+
+<pre><code>##  [1] 577616 577615 581535 569288 581537 581533 529299 444407 529384 529446
+## [11] 739515 577623 366653 298057 525145 598472 347811 834634 808257 569065
+## [21] 398999 529311 488004 529307
+</code></pre>
+
+<h3><em>What events have the greatest impact?</em></h3>
+
+<h5><strong><em>Final pre-processing and aggregation</em></strong></h5>
+
+<p>The data were aggregated by eventType.  A mapping file was also applied to give more descritpive names to the weather event types.</p>
+
+<pre><code class="r">causeSum &lt;- aggregate(cbind(FATALITIES,INJURIES,dollarProp,dollarCrop,econImpact,healthImpact,totalImpact) ~
+                      eventType,data=yearAnalyze,FUN=sum)
+
+myMap &lt;- data.frame(origName = c(&quot;All Other&quot;,&quot;AVALANCHE&quot;,&quot;BLIZZARD&quot;,&quot;COLD&quot;,
+                                 &quot;DROUGHT&quot;,&quot;DUST&quot;,&quot;FIRE&quot;,&quot;FLASH&quot;,
+                                 &quot;FLOOD&quot;,&quot;FOG&quot;,&quot;HAIL&quot;,&quot;HEAT&quot;,
+                                 &quot;ICE&quot;,&quot;LIGHTNING&quot;,&quot;RAIN&quot;,&quot;RIP&quot;,
+                                 &quot;SNOW&quot;,&quot;THUNDERSTORM&quot;,&quot;TORNADO&quot;,&quot;TROPICAL&quot;,
+                                 &quot;WIND&quot;,&quot;WINTER&quot;,&quot;SURGE&quot;),
+                    modName = c(&quot;All Other&quot;,&quot;Avalanche&quot;,&quot;Blizzard&quot;,&quot;Extreme Cold&quot;,
+                                &quot;Drought&quot;,&quot;Dust Storm&quot;,&quot;Wildfire&quot;,&quot;Flash Flooding&quot;,
+                                &quot;Flood (non-flash)&quot;,&quot;Fog&quot;,&quot;Hail&quot;,&quot;Excessive Heat&quot;,
+                                &quot;Ice Storm&quot;,&quot;Lightning Strike&quot;,&quot;Rain&quot;,&quot;Rip Current/Surf&quot;,
+                                &quot;Snow&quot;,&quot;Thunderstorm Wind&quot;,&quot;Tornado&quot;,&quot;Hurricane Wind&quot;,
+                                &quot;Wind (non-TSTM/Hurricane)&quot;,&quot;Wintry Mess&quot;,&quot;Storm Surge&quot;),
+                    stringsAsFactors=FALSE
+)
+
+for (strNames in myMap$origName){
+    causeSum$descName[causeSum$eventType == strNames] &lt;- myMap$modName[myMap$origName==strNames]
+}
+</code></pre>
+
+<h5><strong><em>Greatest economic impacts</em></strong></h5>
+
+<p>The top-10 events by total economic impact are calculated, with a bar-plot produced to show the proportion of total 1996-2010 economic (crop and property damge) impact associated to that event.</p>
+
+<p>Hurricane winds, storm surges (typically due to hurricanes), and flooding cause the strong majority of economic impact.  While Katrina plays a big role in driving this, it is not uncommon for the US to experience major hurricance landfalls and widespread river floods.  An insurance company or public safety agency would rightly see these as significant hazards to the local economy.</p>
+
+<pre><code class="r">myPlot &lt;- causeSum[order(-causeSum$econImpact),]
+
+par(las=1)
+par(mar=c(6,12,4,2))
+
+barplot(myPlot$econImpact[10:1]/sum(myPlot$econImpact),
+        names.arg=myPlot$descName[10:1],horiz=TRUE,
+        col=&quot;blue&quot;,xlim=c(0,0.4),xaxt=&quot;n&quot;
+)
+
+axis(1,at=seq(0,0.4,by=0.1),lab=paste0(pretty(100*seq(0,0.4,by=0.1)),&quot;%&quot;))
+
+title(main=&quot;Top-10 (by economic impact) event types: 1996-2010&quot;,
+      xlab=&quot;% of economic impact (crop damage plus property damage)&quot;
+)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-15"/></p>
+
+<p><strong><em>Figure 2: US Weather Event Types Causing Greatest Economic Impact (1996-2010)</em></strong>  </p>
+
+<pre><code class="r">colSums(myPlot[1:10,2:8])/colSums(myPlot[,2:8])
+</code></pre>
+
+<pre><code>##   FATALITIES     INJURIES   dollarProp   dollarCrop   econImpact 
+##    0.4102199    0.6595461    0.9647383    0.8808209    0.9539518 
+## healthImpact  totalImpact 
+##    0.4388721    0.8810658
+</code></pre>
+
+<p>These top-10 economic events account for ~95% of the economic impact but less than 50% of the health impact.</p>
+
+<table><thead>
+<tr>
+<th>% Caused</th>
+<th>Fatality</th>
+<th>Injury</th>
+<th>Property</th>
+<th>Crop</th>
+<th>Economic</th>
+<th>Health</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>top-10</td>
+<td>41%</td>
+<td>66%</td>
+<td>96%</td>
+<td>88%</td>
+<td>95%</td>
+<td>44%</td>
+</tr>
+</tbody></table>
+
+<h5><strong><em>Greatest health impacts</em></strong></h5>
+
+<p>The top-10 events by total health impact are calculated, with a bar-plot produced to show the proportion of total 1996-2010 health (indexed fatality plus injury) impact associated to that event.</p>
+
+<p>Excessive heat, tornadoes, and flash floods are the largest drivers of total health impact due to weather in 1996-2010.  Notably, of the top-3 economic drivers (hurricane winds, storm surges, floods), only floods make the top-10 for health impact.  This is likely at least in part related to the comment above about the dataset being a sample (e.g., few deaths in this dataset being attributed to Katrina).  </p>
+
+<p>As a reminder, &ldquo;flash flooding&rdquo; is broken out separately from &ldquo;flooding&rdquo; (typically widespread river floods) and &ldquo;storm surge&rdquo; (typically due to hurricanes).  Despite this, &ldquo;flash flooding&rdquo; ranks third in causing human health impact.  </p>
+
+<pre><code class="r">myPlot &lt;- causeSum[order(-causeSum$healthImpact),]
+
+par(las=1)
+par(mar=c(6,12,4,2))
+
+barplot(myPlot$healthImpact[10:1]/sum(myPlot$healthImpact),
+        names.arg=myPlot$descName[10:1],horiz=TRUE,
+        col=&quot;orange&quot;,xlim=c(0,0.4), xaxt=&quot;n&quot;
+)
+
+axis(1,at=seq(0,0.4,by=0.1),lab=paste0(pretty(100*seq(0,0.4,by=0.1)),&quot;%&quot;))
+
+title(main=&quot;Top-10 (by health impact) event types: 1996-2010&quot;,
+      xlab=&quot;% of injury-equivalents (each fatality treated as 50 injury-equivalents)&quot;
+)
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-17"/></p>
+
+<p><strong><em>Figure 3: US Weather Event Types Causing Greatest Health Impact (1996-2010)</em></strong>  </p>
+
+<pre><code class="r">colSums(myPlot[1:10,2:8])/colSums(myPlot[,2:8])
+</code></pre>
+
+<pre><code>##   FATALITIES     INJURIES   dollarProp   dollarCrop   econImpact 
+##    0.8648124    0.8536556    0.2850750    0.3241655    0.2900995 
+## healthImpact  totalImpact 
+##    0.8635303    0.3712425
+</code></pre>
+
+<p>These top-10 health events account for ~85% of the health impact but less than 30% of the economic impact.</p>
+
+<table><thead>
+<tr>
+<th>% Caused</th>
+<th>Fatality</th>
+<th>Injury</th>
+<th>Property</th>
+<th>Crop</th>
+<th>Economic</th>
+<th>Health</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>top-10</td>
+<td>86%</td>
+<td>85%</td>
+<td>29%</td>
+<td>32%</td>
+<td>29%</td>
+<td>86%</td>
+</tr>
+</tbody></table>
+
+<p>Different types of events appear to cause different types of impacts (economic vs. health) in this sample of the NOAA Storm Data from 1996-2010.  </p>
+
+<h2>Addendum</h2>
+
+<h4><em>Addendum #1 - EVTYPE mapping</em></h4>
+
+<p>This addendum is to provide further description of the implication of aggregating raw EVTYPE in to more descriptive eventType. See below for the EVTYPE associated to each aggregate description.  Only EVTYPE totalling at least $99 million over 1996-2010 are shown.    </p>
+
+<pre><code class="r">testValue &lt;- aggregate(cbind(totalImpact,econImpact,healthImpact,dollarProp,dollarCrop,FATALITIES,INJURIES) ~
+                             eventType + EVTYPE,data=yearAnalyze,FUN=sum
+                       )
+
+for (strNames in myMap$origName){
+    testValue$descName[testValue$eventType == strNames] &lt;- myMap$modName[myMap$origName==strNames]
+}
+
+testValue &lt;- testValue[order(testValue$descName,-testValue$totalImpact),]
+
+testValue$totalImpact &lt;- round(testValue$totalImpact,1)
+testValue$dollarProp &lt;- round(testValue$dollarProp,1)
+testValue$dollarCrop &lt;- round(testValue$dollarCrop,1)
+
+testValue[testValue$totalImpact&gt;=99,c(10,2:3)]
+</code></pre>
+
+<pre><code>##                      descName                  EVTYPE totalImpact
+## 206                 All Other               LANDSLIDE       508.6
+## 16                  Avalanche               AVALANCHE      1088.5
+## 23                   Blizzard                BLIZZARD       908.5
+## 63                    Drought                 DROUGHT     14382.7
+## 74                 Dust Storm              DUST STORM        99.9
+## 81             Excessive Heat          EXCESSIVE HEAT      9929.3
+## 147            Excessive Heat                    HEAT       932.8
+## 89               Extreme Cold            EXTREME COLD      1881.6
+## 122              Extreme Cold            FROST/FREEZE      1084.6
+## 90               Extreme Cold EXTREME COLD/WIND CHILL       619.0
+## 52               Extreme Cold         COLD/WIND CHILL       373.6
+## 108              Extreme Cold                  FREEZE       146.4
+## 98             Flash Flooding             FLASH FLOOD     19344.0
+## 447            Flash Flooding                 TSUNAMI       263.4
+## 102         Flood (non-flash)                   FLOOD     28469.4
+## 473         Flood (non-flash)    URBAN/SML STREAM FLD       214.7
+## 34          Flood (non-flash)           COASTAL FLOOD       212.3
+## 303         Flood (non-flash)          River Flooding       134.3
+## 37          Flood (non-flash)        COASTAL FLOODING       102.5
+## 106                       Fog                     FOG       384.3
+## 142                      Hail                    HAIL     16640.7
+## 185            Hurricane Wind       HURRICANE/TYPHOON     72361.2
+## 183            Hurricane Wind               HURRICANE     14842.8
+## 430            Hurricane Wind          TROPICAL STORM      8455.6
+## 448            Hurricane Wind                 TYPHOON       601.6
+## 196                 Ice Storm               ICE STORM      4091.8
+## 224          Lightning Strike               LIGHTNING      4222.6
+## 154                      Rain              HEAVY RAIN      1768.4
+## 300          Rip Current/Surf             RIP CURRENT      1573.2
+## 301          Rip Current/Surf            RIP CURRENTS      1039.6
+## 171          Rip Current/Surf               HIGH SURF       476.8
+## 167          Rip Current/Surf    HEAVY SURF/HIGH SURF       224.7
+## 161                      Snow              HEAVY SNOW      1294.2
+## 342               Storm Surge             STORM SURGE     43207.2
+## 343               Storm Surge        STORM SURGE/TIDE      4656.8
+## 434         Thunderstorm Wind               TSTM WIND      6599.8
+## 421         Thunderstorm Wind       THUNDERSTORM WIND      3742.0
+## 444         Thunderstorm Wind          TSTM WIND/HAIL       143.5
+## 426                   Tornado                 TORNADO     21119.8
+## 496                  Wildfire                WILDFIRE      4820.5
+## 495                  Wildfire        WILD/FOREST FIRE      3223.1
+## 177 Wind (non-TSTM/Hurricane)               HIGH WIND      7057.4
+## 346 Wind (non-TSTM/Hurricane)             STRONG WIND       697.6
+## 92  Wind (non-TSTM/Hurricane)       EXTREME WINDCHILL       103.3
+## 498 Wind (non-TSTM/Hurricane)                    WIND       101.0
+## 507               Wintry Mess            WINTER STORM      2605.7
+## 509               Wintry Mess          WINTER WEATHER       223.3
+## 511               Wintry Mess      WINTER WEATHER/MIX       153.6
+</code></pre>
+
+<pre><code class="r">colSums(testValue[testValue$totalImpact&gt;=99,c(3,6:9)])/colSums(testValue[testValue$totalImpact&gt;=0,c(3,6:9)])
+</code></pre>
+
+<pre><code>## totalImpact  dollarProp  dollarCrop  FATALITIES    INJURIES 
+##   0.9952317   0.9990311   0.9937128   0.9758085   0.9803718
+</code></pre>
+
+<p>The EVTYPE shown above account for 97%-99% of the various impacts of interest.</p>
+
+<h4><em>Addendum #2 - Top-10 events for each type of impact on a stand-alone basis</em></h4>
+
+<p>The raw data are such that the indexing and aggregation methodologies lead crop damage and injuries to take a back-seat to property damage and fatalities.</p>
+
+<p>Below are the top-10 EVTYPE for each of dollarCrop, INJURIES, dollarProp, and FATALITIES.  Drought in particular drives a lot of crop damage, but not much else.</p>
+
+<pre><code class="r">for (myString in c(&quot;dollarCrop&quot;,&quot;INJURIES&quot;,&quot;dollarProp&quot;,&quot;FATALITIES&quot;)) {
+    myLoc &lt;- grep(myString,colnames(testValue))
+    testValue &lt;- testValue[order(-testValue[,myLoc]),]
+    print(&quot;--------------------&quot;)
+    print(paste0(&quot;----- Data for top-10 drivers of: &quot;,myString))
+    print(testValue[1:10,c(2,10,3,6:9)])
+    print(&quot;--------------------&quot;)
+    print(paste0(&quot;These top 10 EVTYPE for: &quot;,myString,&quot; represent the below proportions of total&quot;))
+    print(colSums(testValue[1:10,c(3,6:9)])/colSums(testValue[,c(3,6:9)]))
+}
+</code></pre>
+
+<pre><code>## [1] &quot;--------------------&quot;
+## [1] &quot;----- Data for top-10 drivers of: dollarCrop&quot;
+##                EVTYPE          descName totalImpact dollarProp dollarCrop
+## 63            DROUGHT           Drought     14382.7     1046.0    13336.3
+## 102             FLOOD Flood (non-flash)     28469.4    21227.2     4787.4
+## 183         HURRICANE    Hurricane Wind     14842.8    11802.3     2730.9
+## 185 HURRICANE/TYPHOON    Hurricane Wind     72361.2    69305.8     2607.9
+## 142              HAIL              Hail     16640.7    14143.8     2393.7
+## 89       EXTREME COLD      Extreme Cold      1881.6       19.8     1289.0
+## 98        FLASH FLOOD    Flash Flooding     19344.0    13838.2     1246.5
+## 122      FROST/FREEZE      Extreme Cold      1084.6        3.9     1080.7
+## 154        HEAVY RAIN              Rain      1768.4      573.1      707.5
+## 430    TROPICAL STORM    Hurricane Wind      8455.6     7503.7      653.2
+##     FATALITIES INJURIES
+## 63           0        4
+## 102        356     6748
+## 183         61       46
+## 185         64     1275
+## 142          7      682
+## 89         113       79
+## 98         819     1644
+## 122          0        0
+## 154         93      229
+## 430         53      337
+## [1] &quot;--------------------&quot;
+## [1] &quot;These top 10 EVTYPE for: dollarCrop represent the below proportions of total&quot;
+## totalImpact  dollarProp  dollarCrop  FATALITIES    INJURIES 
+##   0.5807880   0.6040589   0.9054312   0.2025873   0.2200745 
+## [1] &quot;--------------------&quot;
+## [1] &quot;----- Data for top-10 drivers of: INJURIES&quot;
+##                EVTYPE                  descName totalImpact dollarProp
+## 426           TORNADO                   Tornado     21119.8    14797.3
+## 102             FLOOD         Flood (non-flash)     28469.4    21227.2
+## 81     EXCESSIVE HEAT            Excessive Heat      9929.3        6.6
+## 224         LIGHTNING          Lightning Strike      4222.6      696.1
+## 434         TSTM WIND         Thunderstorm Wind      6599.8     4478.0
+## 98        FLASH FLOOD            Flash Flooding     19344.0    13838.2
+## 507      WINTER STORM               Wintry Mess      2605.7     1514.6
+## 185 HURRICANE/TYPHOON            Hurricane Wind     72361.2    69305.8
+## 177         HIGH WIND Wind (non-TSTM/Hurricane)      7057.4     5205.9
+## 421 THUNDERSTORM WIND         Thunderstorm Wind      3742.0     3000.8
+##     dollarCrop FATALITIES INJURIES
+## 426      252.1        924    14504
+## 102     4787.4        356     6748
+## 81       492.4       1761     6253
+## 224        6.8        625     3947
+## 434      553.9        241     3629
+## 98      1246.5        819     1644
+## 507       11.9        190     1292
+## 185     2607.9         64     1275
+## 177      589.3        231     1072
+## 421      258.5         76     1027
+## [1] &quot;--------------------&quot;
+## [1] &quot;These top 10 EVTYPE for: INJURIES represent the below proportions of total&quot;
+## totalImpact  dollarProp  dollarCrop  FATALITIES    INJURIES 
+##   0.5685398   0.5806990   0.3173448   0.6839586   0.8248012 
+## [1] &quot;--------------------&quot;
+## [1] &quot;----- Data for top-10 drivers of: dollarProp&quot;
+##                EVTYPE                  descName totalImpact dollarProp
+## 185 HURRICANE/TYPHOON            Hurricane Wind     72361.2    69305.8
+## 342       STORM SURGE               Storm Surge     43207.2    43193.5
+## 102             FLOOD         Flood (non-flash)     28469.4    21227.2
+## 426           TORNADO                   Tornado     21119.8    14797.3
+## 142              HAIL                      Hail     16640.7    14143.8
+## 98        FLASH FLOOD            Flash Flooding     19344.0    13838.2
+## 183         HURRICANE            Hurricane Wind     14842.8    11802.3
+## 430    TROPICAL STORM            Hurricane Wind      8455.6     7503.7
+## 177         HIGH WIND Wind (non-TSTM/Hurricane)      7057.4     5205.9
+## 343  STORM SURGE/TIDE               Storm Surge      4656.8     4600.5
+##     dollarCrop FATALITIES INJURIES
+## 185     2607.9         64     1275
+## 342        0.0          2       37
+## 102     4787.4        356     6748
+## 426      252.1        924    14504
+## 142     2393.7          7      682
+## 98      1246.5        819     1644
+## 183     2730.9         61       46
+## 430      653.2         53      337
+## 177      589.3        231     1072
+## 343        0.8         11        5
+## [1] &quot;--------------------&quot;
+## [1] &quot;These top 10 EVTYPE for: dollarProp represent the below proportions of total&quot;
+## totalImpact  dollarProp  dollarCrop  FATALITIES    INJURIES 
+##   0.7652467   0.8905932   0.4481713   0.3270375   0.5250782 
+## [1] &quot;--------------------&quot;
+## [1] &quot;----- Data for top-10 drivers of: FATALITIES&quot;
+##             EVTYPE                  descName totalImpact dollarProp
+## 81  EXCESSIVE HEAT            Excessive Heat      9929.3        6.6
+## 426        TORNADO                   Tornado     21119.8    14797.3
+## 98     FLASH FLOOD            Flash Flooding     19344.0    13838.2
+## 224      LIGHTNING          Lightning Strike      4222.6      696.1
+## 102          FLOOD         Flood (non-flash)     28469.4    21227.2
+## 300    RIP CURRENT          Rip Current/Surf      1573.2        0.0
+## 434      TSTM WIND         Thunderstorm Wind      6599.8     4478.0
+## 177      HIGH WIND Wind (non-TSTM/Hurricane)      7057.4     5205.9
+## 16       AVALANCHE                 Avalanche      1088.5        3.7
+## 301   RIP CURRENTS          Rip Current/Surf      1039.6        0.2
+##     dollarCrop FATALITIES INJURIES
+## 81       492.4       1761     6253
+## 426      252.1        924    14504
+## 98      1246.5        819     1644
+## 224        6.8        625     3947
+## 102     4787.4        356     6748
+## 300        0.0        311      182
+## 434      553.9        241     3629
+## 177      589.3        231     1072
+## 16         0.0        214      148
+## 301        0.0        202      294
+## [1] &quot;--------------------&quot;
+## [1] &quot;These top 10 EVTYPE for: FATALITIES represent the below proportions of total&quot;
+## totalImpact  dollarProp  dollarCrop  FATALITIES    INJURIES 
+##   0.3254818   0.2609744   0.2328219   0.7353169   0.7656178
+</code></pre>
+
+</body>
+
+</html>
